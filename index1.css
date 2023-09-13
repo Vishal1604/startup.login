@@ -6,45 +6,45 @@
   
 }
 body{
-    height: 150vh;
+    height: 100vh;
     background-color: rgba(237, 246, 248, 0.916);
 }
 .section1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
 }
 h1{
     color:rgb(252, 131, 50);
-    font-size:75px;
+    font-size:50px;
     z-index: 1;
 }
 img{
     width: 100vw;
-    margin-top: -18px;
+    margin-top: -20px;
+    height: 45vh;
     border: none;
 }
 form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 input.np{
-    width: 50vw;
-    height: 10vh;
+    width: 30vw;
+    height: 6vh;
     padding-left: 10px;
     border: 1px solid black;
     border-radius: 20px;
-    font-weight: 900;
-    font-size: large;
+    font-weight: 600;
+    font-size: 15px;
     box-shadow: 2px 2px 2px rgb(143, 142, 142);
 }
 .forgotpassword{
-    font-weight: 900;
+    font-weight: 600;
     font-size:large;
-    margin-top: 30px;
+    
 }
 a{
     text-decoration: none;
@@ -55,16 +55,15 @@ p{
 .signup{
     font-weight: 600;
     font-size:large;
-    margin-top: 30px;
 }
 #button{
-    width: 50vw;
-    height: 8vh;
+    width: 30vw;
+    height: 5vh;
     border: none;
     padding-left: 10px;
     border-radius: 20px;
     font-weight: 900;
-    font-size:x-large;
+    font-size:20px;
     box-shadow: 2px 2px 2px rgba(158, 120, 255, 0.945);
     background-color: rgb(73, 73, 255);
     text-shadow: 1px 1px 1px white;
@@ -85,7 +84,7 @@ p{
 
 #button:hover{
     border: 2px solid rgb(237, 240, 248);
-   font-size: 28px;
+   font-size: 23px;
    text-shadow: 2px 2px 2px white;
 }
 a:hover{

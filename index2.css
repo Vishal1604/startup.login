@@ -8,12 +8,13 @@
 body{
    
     background-color: rgba(4, 56, 186, 0.767);
-    overflow:auto;
+    overflow:hidden;
 }
 
 .container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+   
    
 }
 form{
@@ -21,35 +22,38 @@ form{
     flex-direction: column;
     align-items: center;
     margin-left: 50px;
-  gap: 10px;
+    justify-content: center;
+  gap: 5px;
+ 
+
   
 }
 .image img{
     width: 50vw;
-    height: 110vh;
+    height: 90vh;
 }
 h1{
     margin-bottom: 30px;
     font-weight: 900;
-    font-size:60px ;
+    font-size:50px;
     text-shadow: 3px 3px 3px rgb(4, 4, 4);
     color: rgb(250, 247, 247);
 }
 input{
-    height: 10vh;
-    width: 40vw;
-    padding-left: 15px;
-    border-radius: 55px;
-    font-weight: 900;
-    font-size: large;
-    border: 3px solid black;
-    box-shadow: 2px 2px 2px rgb(249, 248, 248);
+    width: 25vw;
+    height: 5vh;
+    padding-left: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 2px 2px 2px rgb(143, 142, 142);
     
 }
 #Button{
-    height: 8vh;
+    height: 5vh;
     font-weight: 900;
-    font-size:x-large;
+    font-size:15px;
     box-shadow: 2px 2px 2px rgba(158, 120, 255, 0.945);
     background-color: rgb(250, 29, 37);
     color: rgb(249, 239, 239);
@@ -60,11 +64,11 @@ input{
 .signin{
    color: rgb(245, 240, 110); 
    margin-top: 5px;
-   font-size: large;
+   font-size: 15px;
 }
 a{
     font-weight: 600;
-    font-size:x-large;
+    font-size:20px;
     margin-top: 30px;
     text-decoration: none;
     color: rgb(22, 21, 21);
@@ -72,14 +76,14 @@ a{
 
  a:hover{
         text-decoration: underline;
-        font-size: 25px;
+        font-size: 23px;
         text-shadow: 2px 2px 2px white;
     }
 
     
  #Button:hover{
         border: 2px solid rgb(237, 240, 248);
-        font-size: 28px;
+        font-size: 20px;
         text-shadow: 2px 2px 2px rgb(15, 15, 15);
        cursor: pointer;
     }
@@ -89,8 +93,8 @@ a{
         
     }
     #restriction ,#invalid{
-        font-size: smaller;
-        margin-top: -10px;
+        font-size:x-small;
+        
         color: rgb(245, 242, 242);
     }
 

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index2.css">
+</head>
+<body>
+    <div class="container">
+
+        <form action="" id="form" method="">
+            <h1>Sign Up</h1>
+            <input type="text" name="name" placeholder="Username" id="name" onkeyup="username()"><br>
+            <p id="invalid" ></p>
+            <input type="email" name="email" id="email" placeholder="E-mail"><br>
+            <p id="emessage"></p>
+            <input type="password" name="password" id="password" placeholder="Password" onkeyup="checkPassword()" required><br>
+            <p id="restriction"></p>
+            <input type="password" name="confirm-password" id="confirmpassword" placeholder="confirm-password"  required><br>
+            <p id="message"></p>
+    <input type="submit" value="Submit" id="Button">
+    <p class="signin">Already have an account?<a href="index1.html">Sign In</a></p>
+        </form>
+        <section class="image">
+            <img src="signup.image.png" alt="Error">
+        </section>
+    </div>
+</body>
+<script>
+
+     function username(){
+        const invalidusername=document.getElementById('invalid');
+            let userInput=document.getElementById('name');
+            const name=userInput.value;
+
+          
+
+            // Define your  username conditions here
+            const hasNumbers = /\d/.test(name);
+            const hasSpecialChars = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(name);
+
+let invalid="";
+if(hasNumbers||hasSpecialChars){
+    invalid +="Use Only Alphabets.<br>";
+}
+
+invalidusername.innerHTML=invalid==""?null:invalid;
+
+
+    }
+    // for enter the password
+
+    function checkPassword() {
+            const passwordInput = document.getElementById("password");
+            const passwordMessage = document.getElementById("restriction");
+
+            const password = passwordInput.value;
+
+            // Define your password conditions here
+            const minLength = 8;
+            const hasUpperCase = /[A-Z]/.test(password);
+            const hasLowerCase = /[a-z]/.test(password);
+            const hasNumber = /\d/.test(password);
+            const hasSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password);
+
+            let errorMessage = "";
+
+            if (password.length < minLength) {
+                errorMessage += "*Password must be at least 8 characters long.<br>";
+            }
+
+            if (!hasUpperCase) {
+                errorMessage += "*Password must contain at least one uppercase letter.<br>";
+            }
+
+            if (!hasLowerCase) {
+                errorMessage += "*Password must contain at least one lowercase letter.<br>";
+            }
+
+            if (!hasNumber) {
+                errorMessage += "*Password must contain at least one number.<br>";
+            }
+
+            if (!hasSpecialChar) {
+                errorMessage += "*Password must contain at least one special character (!@#$%^&*()_+{}[]:;<>,.?~\\/-).<br>";
+            }
+
+            passwordMessage.innerHTML = errorMessage === "" ? "" : errorMessage;
+
+        }
+
+        // script for confirmation of password
+        document.getElementById("form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmpassword").value;
+            const message = document.getElementById("message");
+            if (password === confirmPassword) {
+                message.innerHTML = "Password confirmed!";
+            } else {
+                message.innerHTML = "Passwords do not match. Please try again.";
+            }
+        });
+
+
+
+
+
+</script>
+</html>

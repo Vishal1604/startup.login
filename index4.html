@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index4.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+    <div class="container">
+
+        <form action="" id="form">
+            <h1>Reset Password</h1>
+            <input type="password" name="password" id="password" placeholder="Password" onkeyup="checkPassword()" required><br>
+            <p id="restriction"></p>
+            <input type="password" name="confirm-password" id="confirmpassword" placeholder="confirm-password"  required><br>
+            <p id="message"></p>
+    <input type="submit" value="Submit" id="Button">
+        </form>
+        <section class="image">
+            <img src="signup.image.png" alt="Error">
+        </section>
+    </div>
+</body>
+<script>
+    function checkPassword() {
+            const passwordInput = document.getElementById("password");
+            const passwordMessage = document.getElementById("restriction");
+
+            const password = passwordInput.value;
+
+            // Define your password conditions here
+            const minLength = 8;
+            const hasUpperCase = /[A-Z]/.test(password);
+            const hasLowerCase = /[a-z]/.test(password);
+            const hasNumber = /\d/.test(password);
+            const hasSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password);
+
+            let errorMessage = "";
+
+            if (password.length < minLength) {
+                errorMessage += "*Password must be at least 8 characters long.<br>";
+            }
+
+            if (!hasUpperCase) {
+                errorMessage += "*Password must contain at least one uppercase letter.<br>";
+            }
+
+            if (!hasLowerCase) {
+                errorMessage += "*Password must contain at least one lowercase letter.<br>";
+            }
+
+            if (!hasNumber) {
+                errorMessage += "*Password must contain at least one number.<br>";
+            }
+
+            if (!hasSpecialChar) {
+                errorMessage += "*Password must contain at least one special character (!@#$%^&*()_+{}[]:;<>,.?~\\/-).<br>";
+            }
+
+            passwordMessage.innerHTML = errorMessage === "" ? "" : errorMessage;
+
+        }
+
+        // script for confirmation of password
+        document.getElementById("form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmpassword").value;
+            const message = document.getElementById("message");
+
+            if (password === confirmPassword) {
+                message.innerHTML = "*Password confirmed!";
+            } else {
+                message.innerHTML = "*Passwords do not match. Please try again.";
+            }
+        });
+</script>
+</html>
